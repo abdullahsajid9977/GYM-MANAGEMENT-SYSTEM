@@ -7,7 +7,8 @@ public:
 
     void viewPlans() {
 
-        cout << "Basic Plan (Without Treadmill) - 3000\n";
-        cout << "Standard Plan (With Treadmill) - 5000\n";
+        cout << "Without Treadmill - 3000\n";
+        cout << "With Treadmill - 5000\n";
+        cout << "Personal Trainer - 10000\n";
     }
 };

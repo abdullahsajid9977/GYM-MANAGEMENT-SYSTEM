@@ -1,9 +1,11 @@
+#include <iostream>
+using namespace std;
+
 #include "Admin.cpp"
 
 int main() {
 
-    GymSystem* system;
-    system = new Admin();
+    GymSystem* system = new Admin();
 
     Admin* adminPtr = dynamic_cast<Admin*>(system);
 

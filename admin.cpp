@@ -21,9 +21,9 @@ public:
 #include "FinancialReport.cpp"
 
 void header(string title) {
-    cout << "\n============================================\n";
-    cout << "        " << title << "\n";
-    cout << "============================================\n";
+    cout << "\n=============================================\n";
+    cout << "             " << title << "\n";
+    cout << "=============================================\n";
 }
 
 class Admin : public GymSystem {
@@ -44,7 +44,7 @@ public:
 
     bool login() {
 
-        header("GYM MANAGEMENT SYSTEM");
+        header("GYM MANAGEMENT SYSTEM ");
 
         cout << "Username : ";
         cin >> username;
@@ -55,7 +55,7 @@ public:
         try {
             if(username == "admin" && password == "786") {
                 totalLogins++;
-                cout << "\nLogin Successful!\n";
+                cout << "\n Login Successful!\n";
                 return true;
             }
             else {
@@ -181,33 +181,48 @@ public:
         do {
             header("FINANCIAL REPORT");
 
-            cout << "1. Enter Expenses\n";
-            cout << "2. Enter Revenue\n";
-            cout << "3. Show Report\n";
-            cout << "4. Back\n";
+        cout << "1. Enter Expenses\n";
+        cout << "2. Calculate Monthly Revenue\n";
+        cout << "3. Show Report\n";
+        cout << "4. Save Report\n";
+        cout << "5. View Previous Reports\n";
+        cout << "6. Back\n";
 
             cout << "\nEnter Choice: ";
             cin >> choice;
 
-            switch(choice) {
-            case 1:
-                report.inputExpenses();
-                break;
-            case 2:
-                report.inputRevenue();
-                break;
-            case 3:
-                report.calculateReport();
-                report.showReport();
-                break;
-            case 4:
-                cout << "Returning to Main Menu...\n";
-                break;
-            default:
-                cout << "Invalid Choice!\n";
-            }
+        switch(choice) {
 
-        } while(choice != 4);
+case 1:
+    report.inputExpenses();
+    break;
+
+case 2:
+    report.inputRevenue();
+    break;
+
+case 3:
+    report.calculateReport();
+    report.showReport();
+    break;
+
+case 4:
+    report.saveReport();
+    break;
+
+case 5:
+    report.viewReports();
+    break;
+
+case 6:
+    cout << "Returning to Main Menu...\n";
+    break;
+
+default:
+    cout << "Invalid Choice!\n";
+}
+
+        } while(choice != 6);
     }
 
     void mainMenu() {
